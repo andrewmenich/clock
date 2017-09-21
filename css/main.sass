@@ -1,0 +1,126 @@
+---
+---
+
+@import '0-mixins/mixins-dir'
+@import '1-variables/variables-dir'
+@import '2-base/base-dir'
+@import '3-layouts/layouts-dir'
+
+html
+  box-sizing: border-box
+  font-size: 10px
+
+*, *:before, *::after
+  box-sizing: inherit
+
+body
+  background: #22c1c3
+  background: -webkit-linear-gradient(to right, #fdbb2d, #22c1c3)
+  background: linear-gradient(to right, #fdbb2d, #22c1c3)
+  margin: 5%
+  font-size: 2rem
+  display: flex
+  flex: 1
+  max-height: 100vh
+  align-items: center
+
+.clock
+  border: 20px solid #fff
+  border-radius: 50%
+  height: 25em
+  width: 25em
+  margin: 50px auto
+  position: relative
+  padding: 2rem
+
+  .clock-face
+    position: relative
+    width: 100%
+    height: 100%
+    transform: translateY(-3px)
+
+.hand
+  margin: auto
+  width: 50%
+  height: 6px
+  background-color: #000
+  position: absolute
+  top: 50%
+  transform-origin: 100%
+  transform: rotate(90deg)
+  transition: all 0.25s
+  transition-timing-function: cubic-bezier(0, 1.76, 0.88, 0.87)
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2)
+
+.second-hand
+  background-color: red
+
+.center-button
+  width: 20px
+  height: 20px
+  border-radius: 50%
+  background-color: #000
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translateY(-10px) translateX(-10px)
+
+.bar-twelve-six
+  width: 20px
+  height: 60px
+  background-color: #000
+  position: absolute
+  top: 0
+  left: 50%
+  transform: translateX(-10px)
+
+  &::after
+    width: 20px
+    height: 60px
+    background-color: #000
+    position: absolute
+    content: ""
+    bottom: 0
+    top: 610%
+    left: 48%
+    transform: translateX(-10px)
+
+.bar-nine-three
+  width: 20px
+  height: 60px
+  background-color: #000
+  position: absolute
+  top: 43.5%
+  left: 8%
+  transform: translateX(-15px) rotate(90deg)
+
+  &::after
+    width: 20px
+    height: 60px
+    background-color: #000
+    position: absolute
+    content: ""
+    bottom: 0
+    top: -609%
+    left: 50%
+    transform: translateX(-9px)
+
+.bar-one-seven
+  width: 20px
+  height: 60px
+  background-color: #000
+  position: absolute
+  top: 0%
+  left: 50%
+  transform: translateX(-10px) rotate(30deg)
+
+  &::after
+    width: 20px
+    height: 60px
+    background-color: #000
+    position: absolute
+    content: ""
+    bottom: 0
+    top: -609%
+    left: 50%
+    transform: translateX(-9px)
